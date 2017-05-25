@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Negotiation</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    
+    <link rel="stylesheet" href="css/bootstrap-theme.css">    
 </head>
 <body class="container">
     
@@ -35,16 +34,16 @@
         <button class="btn btn-primary text-center" type="button">
             Import Negotiation
         </button>
-        <button class="btn btn-primary text-center" type="button">
+        <button class="btn btn-primary text-center" type="button" onclick="negotiationCtrl.clear()">
             Delete
         </button>
     </div> 
     <br>
     <br>
     <div id="negotiationsView"></div>
-
     
     <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/helpers/Bind.js"></script>
 
     <script src="js/app/models/Negotiation.js"></script>
     <script src="js/app/models/Message.js"></script>
@@ -54,6 +53,8 @@
     <script src="js/app/views/MessageView.js"></script>
 
     <script src="js/app/controllers/NegotiationController.js"></script>
+
+    <script src="js/app/services/ProxyFactory.js"></script>
     
     <script>
         let negotiationCtrl = new NegotiationController();
