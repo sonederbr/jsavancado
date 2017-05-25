@@ -8,19 +8,20 @@ class ProxyFactory{
 
                 if(props.includes(prop) && ProxyFactory._isFunction(target[prop])) {
                     return function() { 
-                        Reflect.apply(target[prop], target, arguments);
-                        return action(target);
+                        let ret = Reflect.apply(target[prop], target, arguments);
+                        action(target);
+                        return ret
                     }
                 }
                 return Reflect.get(target, prop, receiver);       
             },
 
             set(target, prop, value, receiver) {
-                if(props.includes(prop)) {
-                     target[prop] = value;
+                let ret = Reflect.set(target, prop, value, receiver);
+                if(props.includes(prop))
                      action(target);                                           
-                }
-                return Reflect.set(target, prop, value, receiver);
+                
+                return ret;
             }
         })
     }

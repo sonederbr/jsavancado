@@ -37,7 +37,7 @@ class NegotiationController {
     _createNegotiation() {
 
         return new Negotiation(
-            DateHelper.strToDate(this._inputDate.value),
+            DateHelper.convert(this._inputDate.value),
             this._inputAmount.value,
             this._inputPrice.value
         );

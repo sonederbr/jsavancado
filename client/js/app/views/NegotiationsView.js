@@ -19,7 +19,7 @@ class NegotiationsView extends View {
                 </tbody>
                     ${model.negotiations.map(n => `
                             <tr>
-                                <td>${DateHelper.dateToStr(n.date)}</td>
+                                <td>${DateHelper.convert(n.date)}</td>
                                 <td>${n.amount}</td>
                                 <td>${n.price}</td>
                                 <td>${n.total}</td>
